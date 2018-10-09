@@ -9,9 +9,15 @@ app.get("/pokemon", (req, res) => {
     res.send(Pokemon);
 })
 
-app.get("/pokemon/:index", (req, res) => {
+app.get("/pokemon/index", (req, res) => {
     res.render("index.ejs", {
         pokemon: Pokemon
+    })
+})
+
+app.get("/pokemon/:id", (req, res) => {
+    res.render("show.ejs", {
+        pokemon: Pokemon[req.params.id]
     })
 })
 

@@ -12,10 +12,11 @@
         h1 {color: blueviolet}
         li {color: blue}
     </style>
+
     <h1>Pokemon</h1>
     <ul class="pokemon">
         <% for(let i = 0; i < pokemon.length; i++) { %>
-            <li><%= pokemon[i].name %></li>
+            <li><a href="<%= [i] %>"><%= pokemon[i].name %></li></a>
         <% } %>
     </ul>
 </body>
