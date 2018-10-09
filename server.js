@@ -9,6 +9,13 @@ app.get("/pokemon", (req, res) => {
     res.send(Pokemon);
 })
 
+app.get("/pokemon/:index", (req, res) => {
+    res.render("index.ejs", {
+        pokemon: Pokemon
+    })
+})
+
+
 
 
 app.listen(port, function() {
