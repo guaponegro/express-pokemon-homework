@@ -15,9 +15,18 @@
             color: white;
         }
     </style>
+
     <h1>Only One Pokemon</h1>
     <% for(let key in pokemon) { %>
         <%= pokemon[key] %>
     <% } %>
+    <br/>
+
+<a href="/pokemon"><button>Return</button></a>
+<a href="/pokemon/<%= id %>/edit"><button>Edit</button></a>
+    
+
 </body>
+
+
 </html>

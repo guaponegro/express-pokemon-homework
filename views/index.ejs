@@ -17,8 +17,13 @@
     <h1>Pokemon</h1>
     <ul class="pokemon">
         <% for(let i = 0; i < pokemon.length; i++) { %>
-            <li><a href="<%= [i] %>"><%= pokemon[i].name %></li></a>
+            <li><a href="/pokemon/<%= [i] %>/show"><%= pokemon[i].name %></li></a>
         <% } %>
     </ul>
+
+    <br/>
+
+    <a href="/pokemon/new"><button>New Poke</button></a>
+
 </body>
 </html>

@@ -1,25 +1,17 @@
 const express = require("express");
 const app = express();
-
+const methodOverride = require("method-override");
+const pokemonController = require("./controllers/pokemon");
+const bodyParser = require("body-parser");
 const Pokemon = require("./models/pokemon");
 
 const port = 3000;
 
-app.get("/pokemon", (req, res) => {
-    res.send(Pokemon);
-})
+// Middle Ware
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(methodOverride("_method"));
+app.use("/pokemon", pokemonController)
 
-app.get("/pokemon/index", (req, res) => {
-    res.render("index.ejs", {
-        pokemon: Pokemon
-    })
-})
-
-app.get("/pokemon/:id", (req, res) => {
-    res.render("show.ejs", {
-        pokemon: Pokemon[req.params.id]
-    })
-})
 
 
 
@@ -27,3 +19,5 @@ app.get("/pokemon/:id", (req, res) => {
 app.listen(port, function() {
     console.log("App is running on port: ", port);
   });
+
+module.exports = app;
